@@ -273,11 +273,10 @@ def main():
     setup_git_config()
     initialize_local_repo()
     create_basic_files()
-    setup_vscode()
-    repo_url = create_github_repo(repo_name, visibility)
-
     # Development environment setup
     setup_virtualenv()
+    setup_vscode()
+    repo_url = create_github_repo(repo_name, visibility)
 
     # Final output
     print("\n✅ Setup Complete!")
