@@ -218,10 +218,6 @@ def setup_virtualenv():
     print(f"  {activate_cmd}")
 
 
-import os
-import json
-
-
 def setup_vscode():
     """Configure VS Code workspace settings with auto-save, Python formatting, analysis, and Jupyter options."""
     vscode_dir = ".vscode"
@@ -239,7 +235,7 @@ def setup_vscode():
             "editor.formatOnSave": True,
             "editor.codeActionsOnSave": {"source.fixAll": "always"},
         },
-        "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+        "python.defaultInterpreterPath": "${workspaceFolder}/venv/bin/python",
         "python.analysis.typeCheckingMode": "standard",
         "jupyter.askForKernelRestart": False,
         "notebook.formatOnCellExecution": True,

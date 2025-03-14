@@ -8,7 +8,7 @@
       "source.fixAll": "always"
     }
   },
-  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+  "python.defaultInterpreterPath": "${workspaceFolder}/venv/bin/python",
   "python.analysis.typeCheckingMode": "standard",
   "jupyter.askForKernelRestart": false,
   "notebook.formatOnCellExecution": true,
