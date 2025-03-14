@@ -236,7 +236,6 @@ def setup_vscode():
             "editor.codeActionsOnSave": {"source.fixAll": "always"},
         },
         "python.defaultInterpreterPath": "${workspaceFolder}/venv/bin/python",
-        "python.analysis.typeCheckingMode": "standard",
         "jupyter.askForKernelRestart": False,
         "notebook.formatOnCellExecution": True,
         "notebook.codeActionsOnSave": {"notebook.source.fixAll": "explicit"},
