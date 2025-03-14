@@ -235,7 +235,7 @@ def setup_vscode():
             "editor.formatOnSave": True,
             "editor.codeActionsOnSave": {"source.fixAll": "always"},
         },
-        "python.defaultInterpreterPath": r"${workspaceFolder}\\venv\\Scripts\\python.exe",
+        "python.defaultInterpreterPath": "${workspaceFolder}\\venv\\Scripts\\python.exe",
         "jupyter.askForKernelRestart": False,
         "notebook.formatOnCellExecution": True,
         "notebook.codeActionsOnSave": {"notebook.source.fixAll": "explicit"},
