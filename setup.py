@@ -247,10 +247,30 @@ def setup_vscode():
     print("\n✓ VS Code settings configured with your new settings!")
 
 
+def is_git_repo():
+    """Check if the current directory is a Git repository."""
+    result = run_command(
+        "git rev-parse --is-inside-work-tree", check=False, live_output=False
+    )
+    return result.returncode == 0
+
+
+def has_origin_remote():
+    """Check if the Git repository has an 'origin' remote."""
+    result = run_command("git remote", check=False, live_output=False)
+    return "origin" in result.stdout.split()
+
+
 # --- Main Flow ---
 def main():
     print("\n🚀 Python Project Automator - Utkarsh Gaikwad 🚀")
     check_python_version()
+
+    # Prevent execution if origin remote exists
+    if is_git_repo() and has_origin_remote():
+        print("\n✗ This script should be used for first-time repository setup only.")
+        print("   Remote 'origin' already exists - aborting.")
+        sys.exit(1)
 
     # Get repository info
     repo_name = ""
