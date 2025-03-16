@@ -68,13 +68,12 @@ def check_python_version():
 
 
 def check_gh_installed():
-    """Verify GitHub CLI installation."""
-    try:
-        run_command("gh --version", check=False)
+    """Verify GitHub CLI installation by checking command exit code."""
+    result = run_command("gh --version", check=False)
+    if result and result.returncode == 0:
         return True
-    except FileNotFoundError:
-        print("✗ GitHub CLI not installed. Install from https://cli.github.com")
-        return False
+    print("✗ GitHub CLI not installed. Install from https://cli.github.com")
+    return False
 
 
 def github_auth():
